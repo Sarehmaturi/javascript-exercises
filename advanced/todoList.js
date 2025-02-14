@@ -27,13 +27,7 @@ const addTask = (task) => {
     return `Task added: ${task}`;
 };
 
-const removeTask = (task) => {
-    const index = tasks.indexOf(task);
-    if (index !== -1) {
-        tasks.splice(index, 1);
-        return `Task removed: ${task}`;
-    }
-    return `Task ${task} not found`;
+const removeTask = (task) => {tasks = tasks.filter((t) => t !== task);
 };
 
 const showTasks = () => (tasks.length > 0 ? tasks : "No tasks available!");
