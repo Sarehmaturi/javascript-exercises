@@ -23,17 +23,13 @@ beforeEach(() => {
 
 const addUser = (user) => {
     users.push(user);
-    return `User added: ${user}`;
+   // return `User added: ${user}`;
 };
 
 const removeUser = (user) => {
-    const index = users.indexOf(user);
-    if (index !== -1) {
-        users.splice(index, 1);
-        return `User removed: ${user}`;
-    } else {
-        return `User ${user} not found`;
-    }
+  users = users.filter((u) => {
+    u !== user;
+  });
 };
 
 const showUsers = () => (users.length > 0 ? users : "No users available!");
