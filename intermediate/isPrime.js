@@ -12,9 +12,15 @@
 
 // Write your solution here
 
+const isPrime = (num)=> {
+  let temp = 0;
+  for (let i = 0; i <= num; i++) {
+    if (num % i == 0) {
+      temp = temp + 1;
+    }
+  }
+  return temp == 2 ? true : false;
+}
 module.exports = isPrime;
-
-const isPrime = (num) => num > 1 && [...Array(Math.floor(Math.sqrt(num)) + 1).keys()].slice(2).every(i => num % i !== 0);
-
 console.log(isPrime(53)); 
 console.log(isPrime(78)); 
