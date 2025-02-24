@@ -12,3 +12,22 @@
  */
 
 module.exports = generateCombinations;
+
+function generateCombinations(nums) {
+    const result = [];
+    
+    function backtrack(start, combination) {
+        if (combination.length > 0) {
+            result.push([...combination]);
+        }
+        
+        for (let i = start; i < nums.length; i++) {
+            combination.push(nums[i]);
+            backtrack(i + 1, combination);
+            combination.pop();
+        }
+    }
+    
+    backtrack(0, []);
+    return result;
+}
