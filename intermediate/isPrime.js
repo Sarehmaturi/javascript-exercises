@@ -11,10 +11,6 @@
  */
 
 // Write your solution here
+const isPrime = n => n > 1 && [...Array(Math.floor(Math.sqrt(n) - 1)).keys()].every(i => n % (i + 2) !== 0);
 
 module.exports = isPrime;
-
-const isPrime = (num) => num > 1 && [...Array(Math.floor(Math.sqrt(num)) + 1).keys()].slice(2).every(i => num % i !== 0);
-
-console.log(isPrime(53)); 
-console.log(isPrime(78)); 

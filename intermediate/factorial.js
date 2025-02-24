@@ -11,10 +11,5 @@
  */
 
 // Write your solution here
-
+const factorial = n => n < 0 ? undefined : (n <= 1 ? 1 : n * factorial(n - 1));
 module.exports = factorial;
-
-const factorial = (num) => (num <= 0 ? 1 : [...Array(num).keys()].reduce((a, b) => a * (b + 1), 1));
-
-console.log(factorial(5));   
-console.log(factorial(45));  

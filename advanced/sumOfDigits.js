@@ -9,9 +9,6 @@
  * sumOfDigits(123) should return 6 (1 + 2 + 3).
  * sumOfDigits(987) should return 24 (9 + 8 + 7).
  */
-
-module.exports = sumOfDigits;
-
 const sumOfDigits = (number) => [...String(number)].reduce((sum, digit) => sum + Number(digit), 0);
 
-console.log(sumOfDigits(123)); 
+module.exports = sumOfDigits;

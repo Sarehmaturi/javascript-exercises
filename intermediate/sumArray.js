@@ -11,10 +11,6 @@
  */
 
 // Write your solution here
-
-module.exports = sumArray;
-
 const sumArray = (array) => array.reduce((sum, num) => sum + num, 0);
 
-console.log(sumArray([1, 2, 3]));      
-console.log(sumArray([45, 50, 46]));    
+module.exports = sumArray;
