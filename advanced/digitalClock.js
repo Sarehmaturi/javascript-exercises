@@ -18,28 +18,13 @@
  * (e.g., `<div id="clock"></div>`) to display the clock.
  */
 
-
-module.exports = digitalClock;
-
 const digitalClock = () => {
-    const now = new Date();
-    let hours = now.getHours().toString().padStart(2, "0");
-    let minutes = now.getMinutes().toString().padStart(2, "0");
-    let seconds = now.getSeconds().toString().padStart(2, "0");
-  
-    const time = `${hours}:${minutes}:${seconds}`;
-  
-    let clockElement = document.getElementById("clock");
-  
-    if (!clockElement) {
-      clockElement = document.createElement("div");
-      clockElement.id = "clock";
-      document.body.appendChild(clockElement);
-    }
-  
-    clockElement.textContent = time;
-  };
-  
-  setInterval(digitalClock, 1000);
-  digitalClock();
-  
+    const clockElement = document.getElementById("clock");
+    const updateClock = () => {
+        const now = new Date();
+        clockElement.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+    };
+    updateClock();
+    setInterval(updateClock, 1000);
+};
+module.exports = digitalClock;

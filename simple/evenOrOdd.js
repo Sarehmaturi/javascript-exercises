@@ -11,11 +11,6 @@
  */
 
 // Write your solution here
-
-module.exports = isEvenOrOdd;
-
 const isEvenOrOdd = (number) => (number % 2 === 0 ? "Even" : "Odd");
 
-console.log(isEvenOrOdd(9));   
-console.log(isEvenOrOdd(568)); 
-console.log(isEvenOrOdd(-24)); 
+module.exports = isEvenOrOdd;

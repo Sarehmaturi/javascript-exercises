@@ -10,9 +10,6 @@
  */
 
 // Write your solution here
+const printMessage = message => console.log(message);
 
 module.exports = printMessage;
-
-const printMessage = (message) => console.log(message);
-
-printMessage("hello world");

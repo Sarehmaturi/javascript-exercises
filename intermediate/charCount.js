@@ -11,9 +11,7 @@
  */
 
 // Write your solution here
+const charCount = (word, letter) => [...word].filter(char => char === letter).length;
 
 module.exports = charCount;
 
-const charCount = (word, letter) => [...word].filter(char => char === letter).length;
-
-console.log(charCount("hello", "l")); 

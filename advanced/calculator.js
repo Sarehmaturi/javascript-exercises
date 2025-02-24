@@ -15,14 +15,9 @@
 
 // Write your solution here
 
-module.exports = { add, subtract, multiply, divide };
-
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => b === 0 ? NaN : a / b;
 
-console.log(add(2, 3));
-console.log(subtract(5, 2)); 
-console.log(multiply(2, 4)); 
-console.log(divide(10, 2));
+module.exports = { add, subtract, multiply, divide };

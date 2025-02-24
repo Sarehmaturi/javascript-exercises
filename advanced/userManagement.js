@@ -13,34 +13,8 @@
  * removeUser("Alice");
  * showUsers() should return [].
  */
-
+let users = new Set([]);
+const addUser = user => users.has(user) ? false : users.add(user);
+const removeUser = user => users.has(user) ? users.delete(user) : false ;
+const showUsers = () => [...users];
 module.exports = { addUser, removeUser, showUsers };
-
-let users = [];
-beforeEach(() => {
-    users = []; 
-});
-
-const addUser = (user) => {
-    users.push(user);
-    return `User added: ${user}`;
-};
-
-const removeUser = (user) => {
-    const index = users.indexOf(user);
-    if (index !== -1) {
-        users.splice(index, 1);
-        return `User removed: ${user}`;
-    } else {
-        return `User ${user} not found`;
-    }
-};
-
-const showUsers = () => (users.length > 0 ? users : "No users available!");
-
-console.log(addUser("Alice"));
-console.log(addUser("Sareh"));
-console.log(showUsers());
-console.log(removeUser("Alice"));
-console.log(showUsers());
-console.log(removeUser("Molly"));
