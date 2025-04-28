@@ -11,17 +11,22 @@
  * [ [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3] ].
  */
 
-module.exports = generateCombinations;
 
-const generateCombinations = (array) => {
-    const combinations = [];
-  
-    for (let i = 0; i < array.length; i++) {
-        for (let j = i + 1; j <= array.length; j++) {
-            combinations.push(array.slice(i, j));
-        }
+function generateCombinations(array) {
+  let pushed_Array = [];
+  function helper(start, current_combination) {
+    if (current_combination.length > 0) {
+      pushed_Array.push([...current_combination]);
     }
-    return combinations;
-};
+    for (let i = start; i < array.length; i++) {
+      current_combination.push(array[i]);
+      helper(i + 1, current_combination);
+      current_combination.pop();
+    }
+  }
+  helper(0, []);
+  return pushed_Array.sort((a, b) => a.length - b.length);
+}
+module.exports = generateCombinations;
 
 console.log(generateCombinations([1, 2, 3]));  
